@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.js"></script>
+  <link rel="stylesheet" href="http://typo.sofi.sh/typo.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+      body{
+        padding:16px;
+      }
+      img{max-width:100%;}
+  </style>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+      var markdown = `
+# Marked in browser
+Rendered by **marked**.
+
+[我的博客园](http://www.cnblogs.com/wang715100018066/)
+
+**王立娟**
+> 不在沉默中爆发，就在沉默中灭亡。——鲁迅
+
+看我用markdown
+
+<!-- ![](http://i4.buimg.com/567571/eccda517011fad98.jpg) -->
+<img src="http://i4.buimg.com/567571/eccda517011fad98.jpg" alt="">
+响应式页面注意：
+1，不要让页面出现缩放；即mata声明；
+2，最大宽度100%；
+`
+      var html = marked(markdown);
+      
+      console.log(html);
+      //"<h1 id=\"marked-in-browser\">Marked in browser</h1><p>Rendered by <strong>marked</strong>.</p>"
+      
+      document.getElementById('content').innerHTML = html;
+    </script>
+</body>
+</html>
